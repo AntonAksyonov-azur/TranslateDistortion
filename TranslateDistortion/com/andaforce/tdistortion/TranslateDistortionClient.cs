@@ -8,7 +8,7 @@ namespace TranslateDistortion.com.andaforce.tdistortion
     {
         public delegate void OnTranslateIterationCompleteDelegate(String translationResult);
 
-        private readonly AbstractTranslateApiClient _translateApiClient;
+        private readonly ITranslateClient _translateApiClient;
         private String _currentLangDirection = "ru";
         private String _currentResult;
         private String[] _langDirections;
@@ -17,7 +17,7 @@ namespace TranslateDistortion.com.andaforce.tdistortion
         private String _sourceString;
 
         public TranslateDistortionClient(
-            AbstractTranslateApiClient translateApiClient,
+            ITranslateClient translateApiClient,
             OnTranslateIterationCompleteDelegate onTranslateIterationComplete)
         {
             _translateApiClient = translateApiClient;

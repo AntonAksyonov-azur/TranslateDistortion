@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,8 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="com\andaforce\tdistortion\translate.api.client\AbstractTranslateApiClient.cs" />
-    <Compile Include="com\andaforce\tdistortion\data\AbstractTranslateApiResult.cs" />
+    <Compile Include="com\andaforce\tdistortion\translate.api.client\ITranslateClient.cs" />
+    <Compile Include="com\andaforce\tdistortion\translate.api.client\bing\AdmAuthentication.cs" />
+    <Compile Include="com\andaforce\tdistortion\translate.api.client\bing\BingTranslateClient.cs" />
     <Compile Include="com\andaforce\tdistortion\TranslateDistortionClient.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
