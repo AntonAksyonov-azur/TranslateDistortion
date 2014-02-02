@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TranslateDistortion.com.andaforce.tdistortion.data
 {
-    class AbstractTranslateApiResult
+    public class AbstractTranslateApiResult
     {
+
     }
 }

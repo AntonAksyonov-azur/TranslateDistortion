@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace TranslateDistortion.com.andaforce.tdistortion
+namespace TranslateDistortion.com.andaforce.tdistortion.translate.api.client
 {
-    class AbstractTranslateApiClient
+    public class AbstractTranslateApiClient
     {
+        public String GetTranslation(String text, String fromLang, String toLang)
+        {
+            return String.Empty;
+        }
     }
 }
