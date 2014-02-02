@@ -5,6 +5,7 @@ using System.Net;
 using System.Runtime.Serialization;
 using System.Web;
 
+// Keys and application control is here: https://datamarket.azure.com/developer/applications/edit/TranslateDistortion
 namespace TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.client.bing
 {
     public class BingTranslateClient : ITranslateClient
@@ -43,8 +44,13 @@ namespace TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.cl
                 "de",
                 "fr",
                 "it",
-
-            }
+                "fi",
+                "ja",
+                "pl",
+                "no",
+                "sv",
+                "es"
+            };
         }
 
 
