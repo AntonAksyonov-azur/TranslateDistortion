@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Runtime.Serialization;
@@ -15,38 +16,53 @@ namespace TranslateDistortion.com.andaforce.tdistortion.translate.api.client.bin
         private AdmAuthentication _admAuthentication;
         private AdmAccessToken _token;
 
+        private List<String> _translateLanguages;
+
         public void Autorize()
         {
             _admAuthentication = new AdmAuthentication(AppId, AppSecret);
             _token = _admAuthentication.GetAccessToken();
         }
 
-        public string[] GetTranslateDirections()
+        public List<String> GetTranslateDirections()
         {
-            throw new NotImplementedException();
+            // I can get all available languages with http://api.microsofttranslator.com/V2/Http.svc/GetLanguagesForTranslate
+            //return PerformWebRequest<>()
+
+            return _translateLanguages ??
+                   (_translateLanguages =
+                       PerformWebRequest<List<String>>(
+                           "http://api.microsofttranslator.com/V2/Http.svc/GetLanguagesForTranslate"));
         }
 
         public string GetTranslation(string text, string fromLang, string toLang)
         {
             String uri = String.Format("{0}&text={1}&from={2}&to={3}",
                 ApiAddress, HttpUtility.UrlEncode(text), fromLang, toLang);
-            String authToken = "Bearer" + " " + _token.access_token;
 
-            var httpWebRequest = (HttpWebRequest) WebRequest.Create(uri);
+            return PerformWebRequest<String>(uri);
+        }
+
+
+        private T PerformWebRequest<T>(String address)
+        {
+            var httpWebRequest = (HttpWebRequest) WebRequest.Create(address);
+
+            String authToken = "Bearer" + " " + _token.access_token;
             httpWebRequest.Headers.Add("Authorization", authToken);
 
             WebResponse response = httpWebRequest.GetResponse();
             Stream stream = response.GetResponseStream();
             if (stream != null)
             {
-                var dcs = new DataContractSerializer(Type.GetType("System.String"));
-                var content = (string) dcs.ReadObject(stream);
+                var dcs = new DataContractSerializer(typeof (T));
+                var content = (T) dcs.ReadObject(stream);
 
                 return content;
             }
             Console.WriteLine("Error while reading request!");
 
-            return String.Empty;
+            return default(T);
         }
     }
 }

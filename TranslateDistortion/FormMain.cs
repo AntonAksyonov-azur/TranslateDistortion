@@ -26,6 +26,8 @@ namespace TranslateDistortion
             var translator = new BingTranslateClient();
             translator.Autorize();
             var str = translator.GetTranslation("Hello world!", "en", "ru");
+            var list = translator.GetTranslateDirections();
+
             var a = 1;
         }
     }

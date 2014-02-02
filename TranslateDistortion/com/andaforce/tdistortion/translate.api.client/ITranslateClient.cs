@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TranslateDistortion.com.andaforce.tdistortion.translate.api.client
 {
@@ -6,6 +7,6 @@ namespace TranslateDistortion.com.andaforce.tdistortion.translate.api.client
     {
         void Autorize();
         String GetTranslation(String text, String fromLang, String toLang);
-        String[] GetTranslateDirections();
+        List<String> GetTranslateDirections();
     }
 }
