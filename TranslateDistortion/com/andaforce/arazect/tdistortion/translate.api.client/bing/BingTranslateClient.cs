@@ -5,7 +5,7 @@ using System.Net;
 using System.Runtime.Serialization;
 using System.Web;
 
-namespace TranslateDistortion.com.andaforce.tdistortion.translate.api.client.bing
+namespace TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.client.bing
 {
     public class BingTranslateClient : ITranslateClient
     {

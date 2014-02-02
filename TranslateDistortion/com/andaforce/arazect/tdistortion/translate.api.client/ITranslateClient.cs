@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TranslateDistortion.com.andaforce.tdistortion.translate.api.client
+namespace TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.client
 {
     public interface ITranslateClient
     {

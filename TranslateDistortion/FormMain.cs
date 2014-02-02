@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using TranslateDistortion.com.andaforce.tdistortion;
-using TranslateDistortion.com.andaforce.tdistortion.translate.api.client;
-using TranslateDistortion.com.andaforce.tdistortion.translate.api.client.bing;
+using TranslateDistortion.com.andaforce.arazect.tdistortion;
+using TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.client;
+using TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.client.bing;
 
 namespace TranslateDistortion
 {

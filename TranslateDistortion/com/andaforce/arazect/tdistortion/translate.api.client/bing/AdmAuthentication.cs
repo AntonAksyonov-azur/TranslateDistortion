@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Web;
 
-namespace TranslateDistortion.com.andaforce.tdistortion.translate.api.client.bing
+namespace TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.client.bing
 {
     [DataContract]
     public class AdmAccessToken

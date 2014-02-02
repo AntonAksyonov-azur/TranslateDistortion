@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using TranslateDistortion.com.andaforce.tdistortion.translate.api.client;
+using TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.client;
 
-namespace TranslateDistortion.com.andaforce.tdistortion
+namespace TranslateDistortion.com.andaforce.arazect.tdistortion
 {
     public class TranslateDistortionClient
     {
