@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Web;
 
+// Example from here: http://msdn.microsoft.com/en-us/library/hh454950.aspx
 namespace TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.client.bing
 {
     [DataContract]

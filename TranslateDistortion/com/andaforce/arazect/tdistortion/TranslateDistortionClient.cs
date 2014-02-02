@@ -18,8 +18,6 @@ namespace TranslateDistortion.com.andaforce.arazect.tdistortion
         private String _currentResult;
         private List<String> _langDirections;
 
-        private String _sourceString;
-
         public TranslateDistortionClient(
             ITranslateClient translateApiClient,
             OnTranslateIterationCompleteDelegate onTranslateIterationComplete)
@@ -32,8 +30,6 @@ namespace TranslateDistortion.com.andaforce.arazect.tdistortion
         public void StartProcess(String sourceString, List<String> langDirections)
         {
             _langDirections = langDirections;
-            _sourceString = sourceString;
-
             _currentResult = sourceString;
 
             _langDirections.Insert(0, _translateApiClient.GetRussianTranslationId());
