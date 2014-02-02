@@ -10,5 +10,6 @@ namespace TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.cl
         List<String> GetTranslateDirections();
         List<String> GetCustomTranslateDirections();
         String GetRussianTranslationId();
+        String GetTranslateDirectionsAddress();
     }
 }

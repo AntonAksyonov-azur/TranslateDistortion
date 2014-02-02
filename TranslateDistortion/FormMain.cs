@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 using TranslateDistortion.com.andaforce.arazect.tdistortion;
 using TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.client;
@@ -26,11 +28,12 @@ namespace TranslateDistortion
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            InitializeDistortion();
 
+            InitializeDistortion();
             lbResults.Items.Clear();
 
-            _translateDistortionClient.StartProcess(tbSourceString.Text,
+            _translateDistortionClient.StartProcess(
+                tbSourceString.Text,
                 _translateClient.GetTranslateDirections());
         }
 
@@ -40,8 +43,20 @@ namespace TranslateDistortion
 
             lbResults.Items.Clear();
 
-            _translateDistortionClient.StartProcess(tbSourceString.Text,
+            _translateDistortionClient.StartProcess(
+                tbSourceString.Text,
                 _translateClient.GetCustomTranslateDirections());
+        }
+
+        private void btnStartCustom_Click_1(object sender, EventArgs e)
+        {
+            InitializeDistortion();
+
+            lbResults.Items.Clear();
+
+            _translateDistortionClient.StartProcess(
+                tbSourceString.Text,
+                tbCustomDirections.Text.Split(new[] {","}, StringSplitOptions.RemoveEmptyEntries).ToList());
         }
 
         #endregion
@@ -61,7 +76,6 @@ namespace TranslateDistortion
             {
                 _translateClient = new BingTranslateClient();
                 _translateClient.Autorize();
-                _translateClient.GetTranslateDirections();
 
                 _translateDistortionClient = new TranslateDistortionClient(
                     _translateClient,
@@ -81,5 +95,13 @@ namespace TranslateDistortion
         private delegate void UpdateLabelDelegate(String from, String to);
 
         #endregion
+
+        private void btnShowList_Click(object sender, EventArgs e)
+        {
+            InitializeDistortion();
+            Process.Start(_translateClient.GetTranslateDirectionsAddress());
+        }
+
+
     }
 }

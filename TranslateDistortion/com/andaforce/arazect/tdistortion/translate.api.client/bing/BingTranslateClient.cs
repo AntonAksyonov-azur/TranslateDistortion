@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.Web;
 
 // Keys and application control is here: https://datamarket.azure.com/developer/applications/edit/TranslateDistortion
+
 namespace TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.client.bing
 {
     public class BingTranslateClient : ITranslateClient
@@ -38,7 +39,7 @@ namespace TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.cl
 
         public List<String> GetCustomTranslateDirections()
         {
-            return new List<string>()
+            return new List<string>
             {
                 "en",
                 "de",
@@ -61,11 +62,17 @@ namespace TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.cl
 
             return PerformWebRequest<String>(uri);
         }
-        
+
         public String GetRussianTranslationId()
         {
             return "ru";
         }
+
+        public string GetTranslateDirectionsAddress()
+        {
+            return @"http://msdn.microsoft.com/en-us/library/hh456380.aspx";
+        }
+
 
         private T PerformWebRequest<T>(String address)
         {

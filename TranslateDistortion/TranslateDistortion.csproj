@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="com\andaforce\tdistortion\translate.api.client\ITranslateClient.cs" />
-    <Compile Include="com\andaforce\tdistortion\translate.api.client\bing\AdmAuthentication.cs" />
-    <Compile Include="com\andaforce\tdistortion\translate.api.client\bing\BingTranslateClient.cs" />
-    <Compile Include="com\andaforce\tdistortion\TranslateDistortionClient.cs" />
+    <Compile Include="com\andaforce\arazect\tdistortion\translate.api.client\ITranslateClient.cs" />
+    <Compile Include="com\andaforce\arazect\tdistortion\translate.api.client\bing\AdmAuthentication.cs" />
+    <Compile Include="com\andaforce\arazect\tdistortion\translate.api.client\bing\BingTranslateClient.cs" />
+    <Compile Include="com\andaforce\arazect\tdistortion\TranslateDistortionClient.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
