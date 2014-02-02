@@ -149,6 +149,8 @@
             this.Controls.Add(this.lTranslateStatus);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "Translate Distortion";
             this.groupBox1.ResumeLayout(false);

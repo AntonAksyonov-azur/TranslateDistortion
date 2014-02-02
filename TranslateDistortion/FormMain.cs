@@ -28,7 +28,6 @@ namespace TranslateDistortion
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-
             InitializeDistortion();
             lbResults.Items.Clear();
 
@@ -85,7 +84,7 @@ namespace TranslateDistortion
                 _updateLabelDelegate =
                     delegate(string from, string to)
                     {
-                        lTranslateStatus.Text = String.Format("Сейчас переводится: {0}->{1}", @from, to);
+                        lTranslateStatus.Text = String.Format("Сейчас переводится: {0}->{1}", from, to);
                     };
             }
         }
@@ -101,7 +100,5 @@ namespace TranslateDistortion
             InitializeDistortion();
             Process.Start(_translateClient.GetTranslateDirectionsAddress());
         }
-
-
     }
 }
