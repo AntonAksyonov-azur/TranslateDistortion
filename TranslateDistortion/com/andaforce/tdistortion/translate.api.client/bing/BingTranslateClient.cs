@@ -35,6 +35,19 @@ namespace TranslateDistortion.com.andaforce.tdistortion.translate.api.client.bin
                            "http://api.microsofttranslator.com/V2/Http.svc/GetLanguagesForTranslate"));
         }
 
+        public List<String> GetCustomTranslateDirections()
+        {
+            return new List<string>()
+            {
+                "en",
+                "de",
+                "fr",
+                "it",
+
+            }
+        }
+
+
         public string GetTranslation(string text, string fromLang, string toLang)
         {
             String uri = String.Format("{0}&text={1}&from={2}&to={3}",
@@ -42,7 +55,11 @@ namespace TranslateDistortion.com.andaforce.tdistortion.translate.api.client.bin
 
             return PerformWebRequest<String>(uri);
         }
-
+        
+        public String GetRussianTranslationId()
+        {
+            return "ru";
+        }
 
         private T PerformWebRequest<T>(String address)
         {

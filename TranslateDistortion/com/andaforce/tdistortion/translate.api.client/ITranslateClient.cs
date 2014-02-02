@@ -8,5 +8,7 @@ namespace TranslateDistortion.com.andaforce.tdistortion.translate.api.client
         void Autorize();
         String GetTranslation(String text, String fromLang, String toLang);
         List<String> GetTranslateDirections();
+        List<String> GetCustomTranslateDirections();
+        String GetRussianTranslationId();
     }
 }
