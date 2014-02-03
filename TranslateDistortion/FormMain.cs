@@ -64,7 +64,7 @@ namespace TranslateDistortion
 
         private void UpdateControls(String result, String current, String next)
         {
-            lbResults.Invoke(_addItemToListBox, result);
+            lbResults.Invoke(_addItemToListBox, String.Format("[{0}]->[{1}]:  {2}", current, next, result));
 
             lTranslateStatus.Invoke(_updateLabelDelegate, current, next);
         }

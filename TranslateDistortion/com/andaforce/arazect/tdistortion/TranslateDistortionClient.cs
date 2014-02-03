@@ -47,7 +47,7 @@ namespace TranslateDistortion.com.andaforce.arazect.tdistortion
                     _langDirections[i], _langDirections[i + 1]);
 
                 _onTranslateIterationComplete.Invoke(
-                    String.Format("[{0}]->[{1}]:  {2}", _langDirections[i], _langDirections[i + 1], _currentResult),
+                    _currentResult,
                     _langDirections[i],
                     _langDirections[i + 1]);
 
