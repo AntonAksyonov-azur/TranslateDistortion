@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using TranslateDistortion.com.andaforce.arazect.tdistortion.translate.api.client;
 
@@ -29,7 +30,7 @@ namespace TranslateDistortion.com.andaforce.arazect.tdistortion
 
         public void StartProcess(String sourceString, List<String> langDirections)
         {
-            _langDirections = langDirections;
+            _langDirections = langDirections.ToList();
             _currentResult = sourceString;
 
             _langDirections.Insert(0, _translateApiClient.GetRussianTranslationId());

@@ -29,7 +29,6 @@ namespace TranslateDistortion
         private void btnStart_Click(object sender, EventArgs e)
         {
             InitializeDistortion();
-            lbResults.Items.Clear();
 
             _translateDistortionClient.StartProcess(
                 tbSourceString.Text,
@@ -40,8 +39,6 @@ namespace TranslateDistortion
         {
             InitializeDistortion();
 
-            lbResults.Items.Clear();
-
             _translateDistortionClient.StartProcess(
                 tbSourceString.Text,
                 _translateClient.GetCustomTranslateDirections());
@@ -50,8 +47,6 @@ namespace TranslateDistortion
         private void btnStartCustom_Click_1(object sender, EventArgs e)
         {
             InitializeDistortion();
-
-            lbResults.Items.Clear();
 
             _translateDistortionClient.StartProcess(
                 tbSourceString.Text,
@@ -87,6 +82,8 @@ namespace TranslateDistortion
                         lTranslateStatus.Text = String.Format("Сейчас переводится: {0}->{1}", from, to);
                     };
             }
+
+            lbResults.Items.Clear();
         }
 
         private delegate void AddItemToListBoxDelegate(String newEntry);
